@@ -6,7 +6,7 @@
 
 使用简洁，示例如下：
 
-```mermaid
+```
 <HierarchyView
                 options={options}
                 levelNames={[]}
@@ -36,3 +36,7 @@ options参数说明：
 | 参数  | 说明                     | 类型   |
 | ----- | ------------------------ | ------ |
 | rowId | 表示每个节点的唯一标识。 | string |
+| children | 该节点的所有直系子节点的rowId。 | string[] |
+| title | 该节点的展示的label。 | string |
+| pid | 如果该节点有父节点，那么则表示其父节点的rowId。 | string |
+| pathIds | 表示该节点的关联路径，例如[根，祖，父，己]的节点rowId集合。 | string[] |
