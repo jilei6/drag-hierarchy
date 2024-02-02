@@ -12,6 +12,7 @@ const CreateRecordWrap = styled.div`
     textarea {
         padding: 12px 30px 12px 12px;
         resize: none;
+        height: 40px;
     }
 
     .switchToCompleteCreate {
