@@ -8,16 +8,16 @@
 
 ```
 <HierarchyView
-                options={options}
-                levelNames={[]}
-                disEdit={disEdit}
-                onSave={
-                    disEdit
-                        ? undefined
-                        : (nodes, levelNames) => {
-                          }
-                }
-            />
+  options={options}
+  levelNames={[]}
+  disEdit={disEdit}
+  onSave={
+    disEdit
+    ? undefined
+    : (nodes, levelNames) => {
+       }
+    }
+/>
 ```
 
 参数：
