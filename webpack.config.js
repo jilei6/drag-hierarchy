@@ -97,17 +97,6 @@ module.exports = function (webpackEnv) {
         //   paths.appPackageJson,
         // ]),
       ],
-      fallback: {
-        // 处理gis中间件报错
-        util: false,
-        assert: false,
-        stream: false,
-        zlib: false,
-        http: false,
-        https: false,
-        querystring: false,
-        url: false,
-      },
     },
     devtool: 'source-map',
     // devtool: isEnvProduction
