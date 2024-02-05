@@ -39,9 +39,5 @@ options参数说明：
 | children | 该节点的所有直系子节点的rowId。 | string[] |
 | title | 该节点的展示的label。 | string |
 | pid | 如果该节点有父节点，那么则表示其父节点的rowId。 | string |
-<<<<<<< HEAD
-| pathIds | 表示该节点的关联路径，例如[根，祖，父，己]的节点rowId集合。 | string[] |
-
-=======
 | pathId | 表示该节点的关联路径，例如[根，祖，父，己]的节点rowId集合。 | string[] |
->>>>>>> 78d216ed423acc42f4b03bedd59db6e92446d273
+
