@@ -128,10 +128,16 @@ function Hierarchy(props) {
 
   const handleAddRecord = (obj) => {
     const { isTextTitle, value = "", pid, visible, ...rest } = obj;
-    if (isTextTitle) {
+    const isHaveEditing = nodes?.find((v) => v?.type === "textTitle");
+    if (isTextTitle && !isHaveEditing) {
       createTextTitleTempRecord({ ...rest, visible, pid });
-      setSaveDisabled(false);
     }
+    const cur = nodes?.find((v) => v?.rowId === pid);
+    if (cur) {
+      cur.visible = true;
+      setState({ level: -1 });
+    }
+    setSaveDisabled(false);
   };
   const removeHierarchyTempItem = ({ rowId, path, pid }) => {
     const parentNode = nodes.find((v) => v?.rowId === pid);

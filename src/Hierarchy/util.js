@@ -93,6 +93,18 @@ const findParentNodes = (data, rowId, parentId, parentNodes = [], path = []) => 
         return [parentNodes, path];
     }
 };
+const showVisible = path => {
+    const config = getItem(`hierarchyConfig`) || {};
+    if (config?.level === -1) {
+        return true;
+    } else {
+        if (path.length >= config?.level - 1) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+};
 // 初始化状态树
 export const initNodes = ({ data, visible = true }) => {
     if (!data || !_.isArray(data) || _.isEmpty(data)) return [];
@@ -102,11 +114,14 @@ export const initNodes = ({ data, visible = true }) => {
         parentNodes.map(v => {
             pathIds.push(v?.key);
         });
+
+        const c_path = path.length === 0 ? [0] : [0].concat(path);
+        const visible = showVisible(path);
         return {
             rowId: item.key,
-            visible,
+            visible: visible,
             display: true,
-            path: path.length === 0 ? [0] : [0].concat(path),
+            path: c_path,
             pathId: pathIds.concat(item.key),
             children: item?.childKeys || [],
             title: item?.value || "",

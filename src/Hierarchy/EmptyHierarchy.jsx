@@ -83,7 +83,7 @@ export default function EmptyHierarchy({
             )}
             onClick={() => setEdit(true)}
           >
-            {value || "一级"}
+            {value || "第一级"}
           </span>
         )}
       </div>
